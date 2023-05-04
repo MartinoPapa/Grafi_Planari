@@ -1,0 +1,3 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {subsubsection}{Teoria usata direttamente nell'algoritmo Hopcroft Trajan}{4}{section*.2}%

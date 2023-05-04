@@ -1,0 +1,70 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage[italian]{babel}
+\pgfplotsset{compat=newest}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+
+\graphicspath{ {img/} }
+
+\title{
+{Grafi Planari}\\
+{\large Università degli studi di Trento} \bigskip \\
+{\includegraphics[width=50mm]{logo_bn.png}}
+}
+\author{Martino Papa}
+\date{Day Month Year}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+Al momento il documento potrebbe contenere anche definizioni o teoremi “di troppo”. Ho scritto tutto ciò che mi sembrava utile al fine di apprendere fino in fondo l'argomento.
+
+\include{teoria.tex}
+
+% LIBRO: graph algorithm and optimization
+
+% definizione faccie
+
+% triangolazione = massimale?
+% grado di un nodo
+% come triangolo un grafo planare?
+% grafo duale
+% sfera <--> piano
+% tazza <--> toro
+% problema: G è hamiltoniano?
+% alleggerimento delle ipotesi ciclo di hamilton 
+% non si perde generalità partendo con un grafo 2-connesso
+% volendo c'è l'algoritmo per l'inserimento nel piano proiettivo
+% grafo non diretto (non si perde generalità testando la planarità)
+
+
+% is planare?
+% path addition method (libro) O(n)
+% dimostrazione teorema kuratowski
+% disegnare i grafi planari quando possibile (?)
+% parlare delle possibili applicazioni dei grafi planari
+% 
+
+
+% disegno con linee rette
+
+% algoritmo di dijkstra più efficente per grafi planari
+\end{document}
