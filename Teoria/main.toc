@@ -1,3 +1,5 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {subsubsection}{Teoria usata direttamente nell'algoritmo Hopcroft Trajan}{4}{section*.2}%
+\contentsline {section}{\numberline {0.1}Teoria dei grafi}{2}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Topologia}{4}{section.0.2}%
+\contentsline {section}{\numberline {0.3}Grafi planari}{6}{section.0.3}%

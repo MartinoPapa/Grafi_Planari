@@ -1,5 +1,5 @@
 %prerequisiti
-
+\section{Teoria dei grafi}
 \begin{definizione}[Grafo]
     Un grafo è una coppia \(G=(V,E)\) dove:
     \begin{itemize}
@@ -10,8 +10,8 @@
 \end{definizione}
 
 \begin{definizione}[Adiacenza]
-Un vertice \(v\) si dice adiacente a \(u\) se esiste \((u,v) \in E\). \\
-NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
+    Un vertice \(v\) si dice adiacente a \(u\) se esiste \((u,v) \in E\). \\
+    NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
 \end{definizione}
 
 \begin{definizione}[Incidente]
@@ -26,12 +26,12 @@ NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
     \end{itemize}
     Per i grafi non orientati avremo invece un'unica definizione:
     \begin{itemize}
-        \item il \textbf{grado} di un nodo è il numero di archi incidenti su di esso. 
+        \item il \textbf{grado} di un nodo è il numero di archi incidenti su di esso.
     \end{itemize}
 \end{definizione}
 
 \begin{definizione}[Cammino]
-    Sia \(G=(V,E)\) un grafo. Un cammino \(C\) di lunghezza \(k\) è una sequenza di nodi \(u_0,u_1 \dots, u_k\) t.c. 
+    Sia \(G=(V,E)\) un grafo. Un cammino \(C\) di lunghezza \(k\) è una sequenza di nodi \(u_0,u_1 \dots, u_k\) t.c.
     \begin{equation}
         (u_i,u_{i+1})\in E \text{ per } 0 \leq i \leq k-1
     \end{equation}
@@ -48,14 +48,14 @@ NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
     Un grafo \(G=(V,E)\) si dice completo se
     \begin{equation}
         \forall u,v \in V \; \exists (u,v) \in E
-    \end{equation} 
+    \end{equation}
     Definiamo \(K_n\) un grafo completo con \(n\) vertici.
 \end{definizione}
 
 \begin{definizione}[Grafo bipartito]
     Un grafo non orientato \(G=(V,E)\) si dice bipartito se \(V\) può essere diviso in due sottoinsiemi \(X,Y\) t.c.
     \begin{equation}
-        \forall (u,v) \in E \text{ vale } u\in X,\; v\in Y \text{ oppure } u\in Y,\; v\in X  
+        \forall (u,v) \in E \text{ vale } u\in X,\; v\in Y \text{ oppure } u\in Y,\; v\in X
     \end{equation}
     Un grafo bipartito può avere al più \(|X|\cdot |Y|\) archi. \\
     Definaiamo inoltre \(K_{m,n}\) il grafo bipartito completo che soddisfa
@@ -63,7 +63,6 @@ NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
         |X|=m,\; |Y|=n,\; \varepsilon \doteq |E| = mn
     \end{equation}
 \end{definizione}
-
 
 \begin{definizione}[Connessione]
     Un grafo non orientato \(G=(V,E)\) è detto \textbf{connesso} se
@@ -87,36 +86,29 @@ NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
 \end{teorema}
 
 \begin{definizione}[Cammini internamente disgiunti]
-    Sia \(G=(V,E)\) un grafo non orientato, siano \(a,b \in V\) due cammini da \(a\) a \(b\) \(a,v_1,\dots,v_n,b\), \(a,u_1,\dots,u_n,b\). Essi si dicono internamente disgiunti se 
+    Sia \(G=(V,E)\) un grafo non orientato, siano \(a,b \in V\) due cammini da \(a\) a \(b\) \(a,v_1,\dots,v_n,b\), \(a,u_1,\dots,u_n,b\). Essi si dicono internamente disgiunti se
     \begin{equation}
         v_i \neq u_j\; \forall i,j
     \end{equation}
 \end{definizione}
 
 \begin{definizione}[Ciclo di Hamilton]
-    Sia \(G=(V,E)\) un grafo non orientato. Definiamo ciclo di Hamilton un ciclo che contiene tutti i vertici del grafo.\\
+    Sia \(G=(V,E)\) un grafo non orientato. Definiamo ciclo di Hamilton un ciclo che contiene tutti i vertici del grafo una sola volta.\\
     Definiamo \(G\) hamiltoniano se \(G\) contiene un ciclo di hamilton.
 \end{definizione}
 % teo
 
-\begin{definizione}[Grafo planare]
-    Un grafo non orientato \(G\) si dice planare se può essere rappresentato nel piano evitando che gli archi si intersechino (se non negli endpoint).
-\end{definizione}
-
-\begin{teorema}[Formula di Eulero]\label{formulaeulero}
-    Sia \(G\) un grafo planare connesso con \(V\) vertici e \(\epsilon\) lati. Sia \(G^\varphi\) una immersione di \(G\) nel piano avente \(f\) faccie. Allora
-    \begin{equation}
-        V+f-\epsilon = 2
-    \end{equation}
-\end{teorema}
-
 \begin{definizione}[Suddivisione]
-    Dato un grafo \(G\) definiamo suddivisione (subdivision) di \(G\) i grafi ottenuti da \(G\) rimpiazzando uno o più archi con cammini di lunghezza 2 o più.
-    \\ Definiamo inoltre contrazione l'operazione inversa della suddivisione.
+    Dato un grafo \(G\) definiamo suddivisione (subdivision) di \(G\) i grafi ottenuti da \(G\) rimpiazzando uno o più archi con cammini di lunghezza 2 o più. In altre parole una suddivisione di \(G\) è un grafo ottenuto da esso inserendo dei vertici “all'interno dei lati”.
 \end{definizione}
-\begin{lemma}
-    Ogni suddivisione di un grafo non planare è non planare.
-\end{lemma}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/suddivisione.PNG}
+    \caption{esempio suddivisione}
+\end{figure}
+\begin{definizione}[Contrazione]
+    Operazione inversa della suddivisione, consiste nell'contrarre un arco avente un endpoint di grado 2.
+\end{definizione}
 
 \begin{definizione}[Grafi omeomorfi]
     Due grafi \(G_1,G_2\) si dicono topologicamente equivalenti o omeomorfi se possono essere trasformati l'uno nell'altro attraverso operazioni di suddivisione o contrazione degli archi.
@@ -127,30 +119,135 @@ NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
     Sia \(H\) un grafo ottenuto da \(G\) tramite una sequenza di operazioni di rimozione di archi o vertici o contrazione di archi. \(H\) è detto minore di \(G\).
 \end{definizione}
 
-\begin{teorema}[Teorema di Kuratowski]
-    Un grafo \(G\) è planare se e solo se non contiene sottografi \(TK_{3,3}\) o \(TK_5\).
-\end{teorema}
-\noindent Si può riformulare il teorema precedente in termine di minori.
-\begin{teorema}[Teorema di Wagner]
-    Un grafo \(G\) è planare se e solo se non ha \(K_{3,3}\) o \(K_5\) come minori.
-\end{teorema}
-
-% Teoria per algoritmo di Hopcroft Trajan
-\subsubsection{Teoria usata direttamente nell'algoritmo Hopcroft Trajan}
-
-\begin{definizione}
-    %grado di una faccia
+\begin{definizione}[Facial walk]
+    Sia \(G\) grafo, \(G^\psi\) una sua immersione nel piano. Un cammino chiuso \(C\) in \(G\) frontiera di una faccia di \(G^\psi\) è detto facial walk di \(G^\psi\).
 \end{definizione}
 
-\begin{lemma}\label{gradifaccie}
-    Sia \(G\) un grafo planare, \(G^\psi\) una sua immersione nel piano, \(F_1, \dots, F_f\) le faccie di \(G^\psi\) allora
-    \begin{equation} 
-        \sum_{i=1}^f \deg(F_i) = 2\epsilon
+\begin{definizione}
+    Definaiamo grado di una faccia \(F\) \(\deg(F)\) come la lunghezza del suo facial walk.
+\end{definizione}
+
+
+\section{Topologia}
+
+\begin{definizione}[n-cella chiusa]
+    Spazio topologico omeomorfo ad una palla chiusa n-dimensionale.
+\end{definizione}
+\begin{definizione}[Complesso cellulare (CW-complesso)]
+    Spazio topologico ottenuto incollando tra loro un insieme di celle chiuse.
+\end{definizione}
+\begin{definizione}[Caratteristica di eulero]
+    Sia \(\tau \subset \mathbb{R}^n\) un complesso cellulare composto da \(k_i\) i-celle \(i=0,\dots,n\). Definiamo caratteristica di eulero
+    \begin{equation}
+        \chi(\tau) = k_0 - k_1 + k_2 - \dots k_n = \sum_{i=0}^{n}{(-1)}^i k_i
+    \end{equation}
+\end{definizione}
+
+\begin{definizione}[Cammini omotopi]
+    Siano \(f,g \in \mathcal{C}^0(X;Y)\). Diciamo \(f\) e \(g\) omotope \(f \sim g\) se esiste \(H : X \times [0,1] \to Y\) t.c.
+    \begin{equation}
+        \forall x \in X \begin{cases}
+            H(x,0)=f(x) \\
+            H(x,1)=g(x)
+        \end{cases}
+    \end{equation}
+    Informalmente questo vale se una mappa può essere “deformata con continutià” nell'altra.
+\end{definizione}
+
+\begin{definizione}[Spazi omotopicamente equivalenti]
+    \(X,Y\) si dicono omotopicamente equivalenti (\(X\sim Y\)) se \(\exists f : X \to Y, g:Y \to X \) t.c.
+    \begin{itemize}
+        \item \(g \circ f \sim id_X\)
+        \item \(f \circ g \sim id_Y\)
+    \end{itemize}
+    Informalmente \(X,Y\) saraano omotopicamente equivalenti se possono essere trasformati l'uno nell'altro con operazioni di deformazione.
+\end{definizione}
+
+\begin{lemma}[Omotopicamente invariante]\label{om-inv}
+    La caratteristica di eulero è un omotopicamente invariante, ovvero
+    \begin{equation}
+        X \sim Y \Rightarrow \chi (X) = \chi (Y)
     \end{equation}
 \end{lemma}
-\begin{proof}
-    Segue direttamente dal fatto che ogni arco \((u,v)\) è incedente esattamente su due faccie di \(G^\psi\).
-\end{proof}
+
+\begin{proposizione}[Invarianza topologica]\label{inv-top}
+    La caratteristica di eulero è un invariante topologico, ovvero
+    \begin{equation}
+        X \simeq Y \Rightarrow \chi (X) = \chi (Y)
+    \end{equation}
+    diciamo che \(X \simeq Y\) se \(X\) e \(Y\) sono omeomorfi.
+\end{proposizione}
+
+\begin{lemma}
+    Ogni poliedro semplice può essere identificato come un grafo planare usando i vertici del poliedro come vertici del grafo e gli spigoli del poliedro come archi del grafo.
+\end{lemma}
+\begin{proposizione}
+    Sia \(\tau\) un poliedro semplice allora \(\chi(\tau)=2\)
+    \begin{proof}
+        Questo risultato segue direttamente dal lemma precedente e dal teorema \(\ref{formulaeulero}\).
+    \end{proof}
+\end{proposizione}
+
+\section{Grafi planari}
+
+\begin{definizione}[Grafo planare]
+    Un grafo non orientato \(G\) si dice planare se può essere rappresentato nel piano evitando che gli archi si intersechino (se non negli endpoint).
+\end{definizione}
+
+\begin{teorema}\label{eulero-generica}
+    Sia \(G\) un grafo planare avente \(k\) componenti connesse. Sia \(G^\varphi\) una immersione di \(G\) nel piano, allora
+    \begin{equation}
+        \chi(G)=V+f-\epsilon = k+1
+    \end{equation}
+    dove \(V\) è il numero di vertici (\(k_0\)), \(\epsilon\) il numero di archi (\(k_1\)) e \(f\) il numero di facce (\(k_2\)).
+    \begin{proof}
+        Procediamo per induzione sul numero di archi \( \epsilon \): \smallskip \\
+        \underline{caso base \(\epsilon=0\)}, \(V=k\) vertici, \(f=1\) quindi è soddisfatta \(V-\epsilon+f = k+1\)\smallskip \\
+        \underline{passo induttivo \(\epsilon \to \epsilon + 1\)}, aggiungiamo un arco al grafo
+        \begin{enumerate}
+            \item \textit{il nuovo arco è un loop}, in questo caso \(V \to V\), \(\epsilon \to \epsilon +1\), \(f \to f+1\), \(k \to k\) e quindi
+                  \begin{equation}
+                      V-(\epsilon+1)+(f+1)=V-\epsilon+f=k+1
+                  \end{equation}
+            \item \textit{il nuovo arco è tra due vertici appartenenti alla stessa componente connessa}, anche in questo caso \(V \to V\), \(\epsilon \to \epsilon +1\), \(f \to f+1\), \(k \to k\) e quindi
+                  \begin{equation}
+                      V-(\epsilon+1)+(f+1)=V-\epsilon+f=k+1
+                  \end{equation}
+            \item \textit{il nuovo arco connette due componenti che erano sconnesse}, in questo caso \(V \to V\), \(\epsilon \to \epsilon +1\), \(f \to f\), \(k \to k-1\) e quindi
+                  \begin{equation}
+                      V-(\epsilon +1)+f = (k-1) + 1 = k'+1
+                  \end{equation}
+                  dove \(k'=k-1\) è il numero di componenti connesse dopo l'aggiunta dell'arco.
+        \end{enumerate}
+    \end{proof}
+\end{teorema}
+
+\begin{corollario}[Formula di Eulero]\label{formulaeulero}
+    Sia \(G\) un grafo planare connesso, allora
+    \begin{equation}
+        \chi(G)=V+f-\epsilon = 2
+    \end{equation}
+    \begin{proof}
+        Direttamente dal teorema \(\ref{eulero-generica}\) con \(k=1\).
+    \end{proof}
+\end{corollario}
+
+\begin{proposizione}
+    Ogni suddivisione di un grafo non planare è non planare, questo implica anche che i vertici di grado 2 non influenzano la planarità del grafo.
+    \begin{proof}
+        Sia \(G\) grafo non planare, \(a,b\) i due archi che si intersecano nell'immersione \(G^\varphi\) è evidente che suddividere \(a\) o \(b\) non andrebbe ad influire sulla non planarità del grafo.
+    \end{proof}
+\end{proposizione}
+
+\begin{lemma}\label{gradifacce}
+    Sia \(G\) un grafo planare, \(G^\psi\) una sua immersione nel piano, \(F_1, \dots, F_f\) le facce di \(G^\psi\) allora
+    \begin{equation}
+        \sum_{i=1}^f \deg(F_i) = 2\epsilon
+    \end{equation}
+    \begin{proof}
+        Segue direttamente dal fatto che ogni arco \((u,v)\) è incedente esattamente su due facce di \(G^\psi\).
+    \end{proof}
+\end{lemma}
 
 \begin{lemma}
     Sia \(G\) planare, \(\epsilon\) il numero di archi, \(V\) il numero di vertici. Vale allora
@@ -161,16 +258,30 @@ NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
     \begin{equation}
         \epsilon \leq 3V - 6
     \end{equation}
+    \begin{proof}
+        Sia \(V<3\). In questo caso il lemma è una diretta conseguenza della formula di Eulero (Teorema {\ref{formulaeulero}}). \\
+        Sia \(V\geq 3\). \(G\) planare \(\Rightarrow\) ogni faccia ha almeno 3 lati ovvero \(\deg(F_i) \geq 3\; \forall i\). Per il lemma {\ref{gradifacce}} vale quindi
+        \begin{equation}
+            2\epsilon = \sum_{i=1}^f \deg(F_i) \geq \sum_{i=1}^f 3 = 3f
+        \end{equation}
+        Per la formula di eulero segue inoltre \(V+f-\epsilon = 2\) da cui abbiamo, moltiplicando per 3 e riarrangiando i termini
+        \begin{equation}
+            3\epsilon = 3V + 3f - 6
+        \end{equation}
+        applicando ora \(3f\leq 2 \epsilon\) otteniamo la tesi.
+    \end{proof}
 \end{lemma}
-\begin{proof}
-    Sia \(V<3\). In questo caso il lemma è una diretta conseguenza della formula di Eulero (Teorema {\ref{formulaeulero}}). \\
-    Sia \(V\geq 3\). \(G\) planare \(\Rightarrow\) ogni faccia ha almeno 3 lati ovvero \(\deg(F_i) \geq 3\; \forall i\). Per il lemma {\ref{gradifaccie}} vale quindi
-    \begin{equation}
-        2\epsilon = \sum_{i=1}^f \deg(F_i) \geq \sum_{i=1}^f 3 = 3f
-    \end{equation}
-    Per la formula di eulero segue inoltre \(V+f-\epsilon = 2\) da cui abbiamo, moltiplicando per 3 e riarrangiando i termini
-    \begin{equation}
-        3\epsilon = 3V + 3f - 6
-    \end{equation}
-    applicando ora \(3f\leq 2 \epsilon\) otteniamo la tesi.
-\end{proof}
+
+% metto immagini di K33 K5
+\begin{teorema}[Teorema di Kuratowski]
+    Un grafo \(G\) è planare se e solo se non contiene sottografi \(TK_{3,3}\) o \(TK_5\).
+    \begin{proof}
+        
+    \end{proof}
+\end{teorema}
+\noindent Si può riformulare il teorema precedente in termine di minori.
+\begin{teorema}[Teorema di Wagner]
+    Un grafo \(G\) è planare se e solo se non ha \(K_{3,3}\) o \(K_5\) come minori.
+\end{teorema}
+
+
