@@ -120,11 +120,11 @@
 \end{definizione}
 
 \begin{definizione}[Facial walk]
-    Sia \(G\) grafo, \(G^\psi\) una sua immersione nel piano. Un cammino chiuso \(C\) in \(G\) frontiera di una faccia di \(G^\psi\) è detto facial walk di \(G^\psi\).
+    Sia \(G\) grafo, \(G^\psi\) una sua immersione nel piano. Un cammino chiuso \(C\) frontiera di una faccia \(F\) di \(G^\psi\) è detto facial walk di F.
 \end{definizione}
 
-\begin{definizione}
-    Definaiamo grado di una faccia \(F\) \(\deg(F)\) come la lunghezza del suo facial walk.
+\begin{definizione}[Grado di una faccia]
+    Definaiamo \(\deg(F)\) grado di una faccia \(F\) come la lunghezza del suo facial walk.
 \end{definizione}
 
 
@@ -235,7 +235,7 @@
 \begin{proposizione}
     Ogni suddivisione di un grafo non planare è non planare, questo implica anche che i vertici di grado 2 non influenzano la planarità del grafo.
     \begin{proof}
-        Sia \(G\) grafo non planare, \(a,b\) i due archi che si intersecano nell'immersione \(G^\varphi\) è evidente che suddividere \(a\) o \(b\) non andrebbe ad influire sulla non planarità del grafo.
+        Sia \(G\) grafo non planare, \(a,b\) due archi che si intersecano nell'immersione \(G^\varphi\), è evidente che suddividere \(a\) o \(b\) non andrebbe ad influire sulla non planarità del grafo.
     \end{proof}
 \end{proposizione}
 
@@ -249,7 +249,7 @@
     \end{proof}
 \end{lemma}
 
-\begin{lemma}
+\begin{proposizione}\label{criterioNonPlan}
     Sia \(G\) planare, \(\epsilon\) il numero di archi, \(V\) il numero di vertici. Vale allora
     \begin{equation}
         \epsilon \leq 3V - 3
@@ -270,13 +270,33 @@
         \end{equation}
         applicando ora \(3f\leq 2 \epsilon\) otteniamo la tesi.
     \end{proof}
+\end{proposizione}
+
+\begin{lemma}
+    \(K_5\) e \(K_{3,3}\) sono grafi non planari.
+    \begin{proof}
+        \underline{\(K_5\)}: il grafo completo \(K_n\) ha \(\epsilon=\frac{n(n-1)}{2}\) archi. Supponendo per assurdo \(K_5\) planare dovrebbe valere la proposizione \(\ref{criterioNonPlan}\) ovvero, essendo \(V=5 \geq 3\)
+        \begin{equation}
+            10 = \frac{n(n-1)}{2} = \epsilon \leq 3V-6 = 9 \rightarrow \text{\Lightning}
+        \end{equation}
+        \underline{\(K_{3,3}\)}: Supponendo per assurdo \(K_{3,3}\) planare, sapendo \(\epsilon=3*3=9\), \(V=6\) dalla formula di eulero \(\ref{formulaeulero}\) otterremmo \(f=2-V+\epsilon=5\). Siccome \(K_{3,3}\) è bipartito non contiene cicli composti da 3 archi \(\rightarrow\) ogni faccia ha almeno 4 lati, ovvero \(\deg(F)\geq 4 \;\forall F\) vale \(\sum_{i=1}^{f} \deg(F_i) \geq 4*f = 20\). Per il lemma \(\ref{gradifacce}\) dovrebbe valere però
+        \begin{equation}
+            20 \leq \sum_{i=1}^{f} \deg(F_i) = 2\epsilon = 18 \rightarrow\text{\Lightning}
+        \end{equation} 
+    \end{proof}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.6]{img/k533.PNG}
+        \caption{immersione nel piano di \(K_5\) e \(K_{3,3}\)}
+    \end{figure} 
 \end{lemma}
 
 % metto immagini di K33 K5
 \begin{teorema}[Teorema di Kuratowski]
     Un grafo \(G\) è planare se e solo se non contiene sottografi \(TK_{3,3}\) o \(TK_5\).
     \begin{proof}
-        
+        \underline{“\(\Rightarrow\)”}: è evidente che se un grafo \(G\) è planare non contiene sottografi omeomorfi a \(K_{3,3}\) o \(K_5\). \smallskip \\
+        \underline{“\(\Leftarrow\)”}: per provare questo lato dell'implicazione dimostramo la tesi equivalente “\(G\) non planare \(\Rightarrow\) contiene \(TK_{3,3}\) o \(TK_5\)”
     \end{proof}
 \end{teorema}
 \noindent Si può riformulare il teorema precedente in termine di minori.
