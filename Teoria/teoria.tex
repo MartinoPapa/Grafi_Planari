@@ -306,8 +306,8 @@ Per capire sta roba serve sapere ste robe prima
 \begin{lemma}\label{lemBlocchi}
     Un grafo separabile è planare se e solo se tutti i suoi blocchi sono planari.
     \begin{proof}
-        \underline{“\(\Rightarrow\)”}: banale, è evidente che se un grafo è planare allora anche i suoi sottografi lo sono.
-        \underline{“\(\leftarrow\)”}: notiamo che due blocchi differenti hanno al più un elemento nell'intersezione, se così non fosse i due blocchi sarebbero 2-connessi confutando l'ipotesi di massimalità. Proseguiamo ora per induzione sul numero di blocchi \(|B|\), dove \(B={\{b_i\}}_{i \in I}\) è l'insieme dei blocchi.
+        \underline{“\(\Rightarrow\)”}: banale, è evidente che se un grafo è planare allora anche i suoi sottografi lo sono.\\
+        \underline{“\(\Leftarrow\)”}: notiamo che due blocchi differenti hanno al più un elemento nell'intersezione, se così non fosse i due blocchi sarebbero 2-connessi confutando l'ipotesi di massimalità. Proseguiamo ora per induzione sul numero di blocchi \(|B|\), dove \(B={\{b_i\}}_{i \in I}\) è l'insieme dei blocchi.
         \begin{itemize}
             \item \textit{caso base}: \(G\) 2-connesso quindi \(|B|=1\), \(B=\{G\}\) e la tesi equivale a “\(G \text{ planare} \Rightarrow G \text{ planare}\)”.
             \item \textit{passo induttivo}: sia \(G\) grafo composto da \(n\) cicli. Rimuoviamo da \(G\) un blocco \(b\) che si intersechi solo con un altro blocco \(b'\) nel veritce \(v\), questo deve esistere perchè altrimenti sarebbe presente un ciclo di blocchi, essi sarebbero dunque 2-connessi e di coneseguenza non massimali \(\text{\Lightning}\); 
@@ -325,15 +325,31 @@ Per capire sta roba serve sapere ste robe prima
     \end{proof}
 \end{lemma}
 
+%lemma usato per dimostrare il teorema sotto
+\begin{lemma}\label{12.3}
+    Sia \(G\) un grafo qualsiasi ottenuto splittando un vertice di \(K_5\) allora \(G\) contiene un sottografo \(TK_{3,3}\).
+    \begin{proof}
+        
+    \end{proof}
+\end{lemma}
+
+%teorema usato nella dimostrazione di kuratowski
 \begin{teorema}\label{minoreTK5}
     Se \(G\) ha un minore \(K_{3,3}\) allora contiene un sottografo \(TK_{3,3}\). \\
     Se \(G\) ha un minore \(K_5\) allora contiene un sottografo \(TK_{3,3}\) o \(TK_5\).
     \begin{proof}
         Supponiamo che \(G\) abbia un minore \(TK_{3,3}\) o \(TK_5\), se nel ottenere il minore non è stata coinvolta nessuna operazione di contrazione degli archi allora esso sarà anche un sottografo di \(G\). Altrimenti sia \(G_0,\dots, G_k\) sequenza di grafi ottenuta da \(G\), \(G_0\) sottografo di \(G\), l'arco \(e_i\) di \(G_{i-1}\) è contratto per ottenere \(G_i\) e \(G_k\) è \(K_{3,3}\) o \(K_5\).
+        Se ogni \(e_i\) ha un endpoint di grado 2 possiamo invertire la contrazione suddividendo gli archi e trovando un sottografo \(TK_{3,3}\) o \(TK_5\). 
+        \\ Altrimenti sia \(e_i\) l'arco con \(i\) massimo tra quelli con entrambi gli endpoint di grado almeno 3. Tutti gli archi contratti successivamente a \(G_i\) hanno un endpoint di grado 2, quindi \(G_i\) ha un sottografo \(TK_{3,3}\) o \(TK_5\). \(G_{i-1}\) può essere ottenuto splittando un vertice \(u \in G_i\), analizziamo ora i 3 casi:
+        \begin{itemize}
+            \item \textit{\(u\) appartiene a \(TK_5\)}: per il lemma \(\ref{12.3}\) \(G_{i-1}\) conterrà un sottografo \(TK_{3,3}\);
+            \item \textit{\(u\) appartiene a \(TK_{3,3}\)}: anche \(G_{i-1}\) conterrà quindi \(TK_{3,3}\);
+            \item \textit{\(u\) non appartiene a \(TK_{3,3}\) e \(TK_5\)}: in \(G_{i-1}\) sarà quindi ancora presente \(TK_{3,3}\) o \(TK_5\).
+        \end{itemize}
     \end{proof}
 \end{teorema}
 
-\begin{teorema}[Teorema di Kuratowski]
+\begin{teorema}[Teorema di Kuratowski]\label{Kuratowski}
     Un grafo \(G\) è planare se e solo se non contiene sottografi \(TK_{3,3}\) o \(TK_5\).
     \begin{proof}
         \underline{“\(\Rightarrow\)”}: dato il lemma \(\ref{k5k33nonplanari}\), è evidente che se un grafo \(G\) è planare non contiene sottografi omeomorfi a \(K_{3,3}\) o \(K_5\). \smallskip \\
@@ -354,7 +370,7 @@ Per capire sta roba serve sapere ste robe prima
             otterremmo una immersione planare di \(G\) \(\rightarrow \text{\Lightning}\). Concludiamo quindi che uno tra \(Ha\) e \(Hb\) è non planare.\\
             Supponendo \(Ha\) non planare allora per ipotesi induttiva contiene un sottografo \(TK_{3,3}\) o \(TK_5\). Se tale sottografo non contiene \(x\) allora è contenuto anche in \(G\) e la dimostrazione è conclusa. Supponiamo quindi che il sottografo contenga \(x\), in questo caso \(Hb\) sarà 2-connesso, in quanto \(G\) lo è. \(Hb\) conterrebbe quindi due cammini internamente disgiunti \(b \to u,\; b\to v\). 
             Questi due cammini assieme all'arco \((a,b)\) possono essere utilizzati per rimpiazzare gli archi \((u,x),(v,x),(a,x)\) di \(Ha\) ottenendo così un sottografo \(TK_{3,3}\) o \(TK_5\) in \(G\).
-            \item \textit{caso \(\kappa(a,b)\geq 3\)}: siano \(P1\), \(P2\), \(P3\) due cammini internamente disgiunti da \(a\) a \(b\) in \(G'\). Consideriamo una immersione nel piano di \(G'\), ogni coppia di cammini \(P1 \cup P2, P1 \cup P3, \P2 \cup P3\) crea un ciclo la cui immersione nel piano sarà una curva di Jordan. Uno dei tre cammini sarà quindi contenuto nella curva di Jordan formata dagli altri, supponiamo \(P2\) contenuto all'interno di \(P1 \cup P3\).
+            \item \textit{caso \(\kappa(a,b)\geq 3\)}: siano \(P1\), \(P2\), \(P3\) due cammini internamente disgiunti da \(a\) a \(b\) in \(G'\). Consideriamo una immersione nel piano di \(G'\), ogni coppia di cammini \(P1 \cup P2, P1 \cup P3, P2 \cup P3\) crea un ciclo la cui immersione nel piano sarà una curva di Jordan. Uno dei tre cammini sarà quindi contenuto nella curva di Jordan formata dagli altri, supponiamo \(P2\) contenuto all'interno di \(P1 \cup P3\).
             L'arco \((a,b)\) può essere immerso all'interno di \(P1 \cup P2\), all'interno di \(P2 \cup P3\) o all'esterno di \(P1 \cup P3\). Siccome \(G\) è non planare ognuna di queste tre regioni \(Pi\) deve contenere un cammino da un vertice interno a \(Pi\) a uno interno a \(Pj\). Sia \(P12\) un cammino da \(u_1 \in P1\) a \(u_2 \in P2\), \(P13\) da \(v_1 \in P1\) a \(u_3 \in P3\), \(P13\) da \(u_2 \in P2\) a \(v_3 \in P3\).\\
             \(\forall i\) se \(u_i \neq v_i\) contraiamo l'arco tra essi, aggiungendo ora l'arco \((a,b)\) il grafo risultante sarà un minore \(TK_5\) di \(G\). Quindi per il teorema \(\ref{minoreTK5}\) \(G\) conterrà un sottografo \(TK_5\) o \(TK_{3,3}\).
             \begin{figure}[H]
@@ -368,6 +384,10 @@ Per capire sta roba serve sapere ste robe prima
 \noindent Si può riformulare il teorema precedente in termine di minori.
 \begin{teorema}[Teorema di Wagner]
     Un grafo \(G\) è planare se e solo se non ha \(K_{3,3}\) o \(K_5\) come minori.
+    \begin{proof}
+        \underline{“\(\Rightarrow\)”}: se \(G\) planare ovviamente non ha come minori \(K_{3,3}\) o \(K_5\). \\
+        \underline{“\(\Leftarrow\)”}: se \(G\) non ha \(K_{3,3}\) o \(K_5\) come minori allora non ha nemmeno sottografi \(TK_{3,3}\) o \(TK_5\) e quindi è planare per il teorema di Kuratowski \(\ref{Kuratowski}\).
+    \end{proof}
 \end{teorema}
 
 

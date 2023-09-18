@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1695050339 "c:/Users/marti/Desktop/uni/Tesi/Teoria/main.tex" "main.pdf" "main" 1695050343 0
+["pdflatex"] 1695053388 "c:/Users/marti/Desktop/uni/Tesi/Teoria/main.tex" "main.pdf" "main" 1695053391 0
   "c:/Users/marti/Desktop/uni/Tesi/Teoria/main.tex" 1694880400 2043 06e2ce017cb7f884bc7d7e1f49c49ba5 ""
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1671536561 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1671540619 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -220,11 +220,11 @@
   "img/k533.png" 1694769648 7611 c118c83f9f90de0941739484239d18c3 ""
   "img/minoreTK5.PNG" 1695048736 53235 cc7e87aadbb452218408359fc1e4fcc5 ""
   "img/suddivisione.PNG" 1694699708 12496 2358684e131e6b5730aabe1f2d4a52b6 ""
-  "main.aux" 1695050342 677 e32560d4dbbf1784b08a008b9741ce91 "pdflatex"
-  "main.out" 1695050342 683 15340131724bc8dfef1fa047cf9dec3d "pdflatex"
-  "main.toc" 1695050342 410 d28c8de3a959d86f2798f3dec9591f30 "pdflatex"
-  "teoria.aux" 1695050342 2468 8f78a8155773c2acbec370f8239075ef "pdflatex"
-  "teoria.tex" 1695050338 23479 fc6b784cfec191b79480fa6f7f5207f9 ""
+  "main.aux" 1695053391 677 2c7f7987166630cbb5e781ec492ff2d9 "pdflatex"
+  "main.out" 1695053391 683 15340131724bc8dfef1fa047cf9dec3d "pdflatex"
+  "main.toc" 1695053391 410 d28c8de3a959d86f2798f3dec9591f30 "pdflatex"
+  "teoria.aux" 1695053391 2580 255a3d1712ad313a6ff63f002d786559 "pdflatex"
+  "teoria.tex" 1695053387 25130 1cabdfda7c1f6fa2ff4b4a6da718a933 ""
   (generated)
   "main.aux"
   "main.log"
