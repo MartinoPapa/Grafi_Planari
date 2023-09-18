@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  15 SEP 2023 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.20)  18 SEP 2023 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -643,7 +643,7 @@ Package hyperref Info: Link coloring OFF on input line 37.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<img//logo_bn.png, id=19, 301.125pt x 301.125pt>
+<img//logo_bn.png, id=23, 301.125pt x 301.125pt>
 File: img//logo_bn.png Graphic file (type png)
 <use img//logo_bn.png>
 Package pdftex.def Info: img//logo_bn.png  used on input line 39.
@@ -673,37 +673,43 @@ l.43 \include{teoria.tex}
 
  (./teoria.tex [2
 
-]
-<img/suddivisione.PNG, id=56, 381.8265pt x 85.5195pt>
+] [3]
+<img/suddivisione.PNG, id=79, 381.8265pt x 85.5195pt>
 File: img/suddivisione.PNG Graphic file (type png)
 <use img/suddivisione.PNG>
-Package pdftex.def Info: img/suddivisione.PNG  used on input line 106.
+Package pdftex.def Info: img/suddivisione.PNG  used on input line 117.
 (pdftex.def)             Requested size: 229.09766pt x 51.31207pt.
- [3] [4 <./img/suddivisione.PNG>] [5] [6]
-LaTeX Font Info:    Trying to load font information for U+mvs on input line 280.
+ [4 <./img/suddivisione.PNG>] [5] [6]
+LaTeX Font Info:    Trying to load font information for U+mvs on input line 290.
  (c:/texlive/2022/texmf-dist/tex/latex/marvosym/umvs.fd) [7]
-<img/k533.PNG, id=142, 403.5075pt x 122.4575pt>
+<img/k533.PNG, id=149, 403.5075pt x 122.4575pt>
 File: img/k533.PNG Graphic file (type png)
 <use img/k533.PNG>
-Package pdftex.def Info: img/k533.PNG  used on input line 289.
+Package pdftex.def Info: img/k533.PNG  used on input line 300.
 (pdftex.def)             Requested size: 242.10637pt x 73.47505pt.
-) [8 <./img/k533.png>] (./main.aux (./teoria.aux))
+ [8 <./img/k533.png>] [9] [10]
+<img/minoreTK5.PNG, id=178, 384.83775pt x 213.79875pt>
+File: img/minoreTK5.PNG Graphic file (type png)
+<use img/minoreTK5.PNG>
+Package pdftex.def Info: img/minoreTK5.PNG  used on input line 362.
+(pdftex.def)             Requested size: 230.90442pt x 128.28023pt.
+) [11 <./img/minoreTK5.PNG>] (./main.aux (./teoria.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 51C1B3D0CFE75515B8B37BFA11189048;334.
+(rerunfilecheck)             Checksum: 15340131724BC8DFEF1FA047CF9DEC3D;683.
  ) 
 Here is how much of TeX's memory you used:
- 32876 strings out of 476093
- 755349 string characters out of 5795582
- 1861787 words of memory out of 5000000
- 52643 multiletter control sequences out of 15000+600000
- 523296 words of font info for 72 fonts, out of 8000000 for 9000
+ 32903 strings out of 476093
+ 755730 string characters out of 5795582
+ 1862787 words of memory out of 5000000
+ 52655 multiletter control sequences out of 15000+600000
+ 523603 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,7n,103p,757b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,8n,103p,757b,690s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (9 pages, 210717 bytes).
+Output written on main.pdf (12 pages, 282319 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
- 79 named destinations out of 1000 (max. 500000)
- 52 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 266 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 

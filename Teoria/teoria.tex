@@ -1,5 +1,8 @@
 %prerequisiti
-\section{Teoria dei grafi}
+\section{Preconcetti e notazioni}
+Per capire sta roba serve sapere ste robe prima
+
+\subsection{Teoria dei grafi}
 \begin{definizione}[Grafo]
     Un grafo è una coppia \(G=(V,E)\) dove:
     \begin{itemize}
@@ -14,7 +17,7 @@
     NB:\@ nei grafi non orientati l'adiacenza è una relazione simmetrica.
 \end{definizione}
 
-\begin{definizione}[Incidente]
+\begin{definizione}[Arco incidente]
     Un arco \((u,v)\) si dice incidente da \(u\) a \(v\).
 \end{definizione}
 
@@ -81,9 +84,17 @@
     Informalmente un grafo è detto k-connesso se rimane connesso rimuovendo \(k'<k\) vertici qualsiasi.
 \end{definizione}
 
-\begin{teorema}[Grafo 2-connesso]
+\begin{teorema}[Grafo 2-connesso (Non separabile)]
     Un grafo non orientato \(G=(V,E),\; |V| \geq 3\) è 2-connesso \(\Leftrightarrow\) ogni coppia di vertici \((u,v)\) è connessa da almeno 2 cammini internamente disgiunti.
 \end{teorema}
+
+\begin{definizione}[Cut vertex]
+    Vertoci che se eliminati sconnettono il grafo.
+\end{definizione}
+
+\begin{definizione}[Blocco]
+    Definiamo blocchi di un grafo i sottografi 2-connessi massimali.
+\end{definizione}
 
 \begin{definizione}[Cammini internamente disgiunti]
     Sia \(G=(V,E)\) un grafo non orientato, siano \(a,b \in V\) due cammini da \(a\) a \(b\) \(a,v_1,\dots,v_n,b\), \(a,u_1,\dots,u_n,b\). Essi si dicono internamente disgiunti se
@@ -116,7 +127,7 @@
 \end{definizione}
 
 \begin{definizione}[Minore]
-    Sia \(H\) un grafo ottenuto da \(G\) tramite una sequenza di operazioni di rimozione di archi o vertici o contrazione di archi. \(H\) è detto minore di \(G\).
+    \(H\) è detto minore di \(G\) se \(H\) è un grafo ottenuto da \(G\) tramite una sequenza di operazioni di rimozione di archi, vertici o contrazione di archi.
 \end{definizione}
 
 \begin{definizione}[Facial walk]
@@ -126,10 +137,13 @@
 \begin{definizione}[Grado di una faccia]
     Definaiamo \(\deg(F)\) grado di una faccia \(F\) come la lunghezza del suo facial walk.
 \end{definizione}
-
-
-\section{Topologia}
-
+\begin{definizione}[Grafo semplice]
+    Grafo contentente un numero finito di nodi.
+\end{definizione}
+\begin{definizione}[Grafo planare]
+    Un grafo non orientato \(G\) si dice planare se può essere rappresentato nel piano evitando che gli archi si intersechino (se non negli endpoint).
+\end{definizione}
+\subsection{Topologia}
 \begin{definizione}[n-cella chiusa]
     Spazio topologico omeomorfo ad una palla chiusa n-dimensionale.
 \end{definizione}
@@ -188,11 +202,7 @@
     \end{proof}
 \end{proposizione}
 
-\section{Grafi planari}
-
-\begin{definizione}[Grafo planare]
-    Un grafo non orientato \(G\) si dice planare se può essere rappresentato nel piano evitando che gli archi si intersechino (se non negli endpoint).
-\end{definizione}
+\section{Risultati teorici sfruttati nell'algoritmo}
 
 \begin{teorema}\label{eulero-generica}
     Sia \(G\) un grafo planare avente \(k\) componenti connesse. Sia \(G^\varphi\) una immersione di \(G\) nel piano, allora
@@ -272,14 +282,15 @@
     \end{proof}
 \end{proposizione}
 
-\begin{lemma}
+\begin{lemma}\label{k5k33nonplanari}
     \(K_5\) e \(K_{3,3}\) sono grafi non planari.
     \begin{proof}
         \underline{\(K_5\)}: il grafo completo \(K_n\) ha \(\epsilon=\frac{n(n-1)}{2}\) archi. Supponendo per assurdo \(K_5\) planare dovrebbe valere la proposizione \(\ref{criterioNonPlan}\) ovvero, essendo \(V=5 \geq 3\)
         \begin{equation}
             10 = \frac{n(n-1)}{2} = \epsilon \leq 3V-6 = 9 \rightarrow \text{\Lightning}
         \end{equation}
-        \underline{\(K_{3,3}\)}: Supponendo per assurdo \(K_{3,3}\) planare, sapendo \(\epsilon=3*3=9\), \(V=6\) dalla formula di eulero \(\ref{formulaeulero}\) otterremmo \(f=2-V+\epsilon=5\). Siccome \(K_{3,3}\) è bipartito non contiene cicli composti da 3 archi \(\rightarrow\) ogni faccia ha almeno 4 lati, ovvero \(\deg(F)\geq 4 \;\forall F\) vale \(\sum_{i=1}^{f} \deg(F_i) \geq 4*f = 20\). Per il lemma \(\ref{gradifacce}\) dovrebbe valere però
+        \underline{\(K_{3,3}\)}: Supponendo per assurdo \(K_{3,3}\) planare, sapendo \(\epsilon=3*3=9\), \(V=6\) dalla formula di eulero \(\ref{formulaeulero}\) otterremmo \(f=2-V+\epsilon=5\). \\
+        Siccome \(K_{3,3}\) è bipartito, esso non contiene cicli composti da 3 archi, quindi ogni faccia ha almeno 4 lati, ovvero \(\deg(F)\geq 4 \;\forall F\) e vale \(\sum_{i=1}^{f} \deg(F_i) \geq 4*f = 20\). Applicando ora il lemma \(\ref{gradifacce}\) otteniamo l'assurdo
         \begin{equation}
             20 \leq \sum_{i=1}^{f} \deg(F_i) = 2\epsilon = 18 \rightarrow\text{\Lightning}
         \end{equation} 
@@ -291,12 +302,67 @@
     \end{figure} 
 \end{lemma}
 
-% metto immagini di K33 K5
+
+\begin{lemma}\label{lemBlocchi}
+    Un grafo separabile è planare se e solo se tutti i suoi blocchi sono planari.
+    \begin{proof}
+        \underline{“\(\Rightarrow\)”}: banale, è evidente che se un grafo è planare allora anche i suoi sottografi lo sono.
+        \underline{“\(\leftarrow\)”}: notiamo che due blocchi differenti hanno al più un elemento nell'intersezione, se così non fosse i due blocchi sarebbero 2-connessi confutando l'ipotesi di massimalità. Proseguiamo ora per induzione sul numero di blocchi \(|B|\), dove \(B={\{b_i\}}_{i \in I}\) è l'insieme dei blocchi.
+        \begin{itemize}
+            \item \textit{caso base}: \(G\) 2-connesso quindi \(|B|=1\), \(B=\{G\}\) e la tesi equivale a “\(G \text{ planare} \Rightarrow G \text{ planare}\)”.
+            \item \textit{passo induttivo}: sia \(G\) grafo composto da \(n\) cicli. Rimuoviamo da \(G\) un blocco \(b\) che si intersechi solo con un altro blocco \(b'\) nel veritce \(v\), questo deve esistere perchè altrimenti sarebbe presente un ciclo di blocchi, essi sarebbero dunque 2-connessi e di coneseguenza non massimali \(\text{\Lightning}\); 
+            potrebbe anche essere che tutti i blocchi siano sconnessi e quindi la loro intersezione sarebbe sempre vuota, tuttavia questo è un caso banale in quanto è evidente che un grafo è planare se e solo se tutte le sue componenti connesse sono planari. 
+            \\ Il grafo \(G'\) risultante dalla rimozione del blocco \(b\) è per ipotesi induttiva planare, disegnamo ora le immersioni nel piano di \(b\) e \(G'\) facendo in modo che il punto di intersezione \(v\) appaia in entrambe le immersioni nella faccia esterna. Possiamo ora unire tra loro le due immersioni ottenendo che \(G=G' \cup b\) è planare.
+        \end{itemize}
+    \end{proof}
+\end{lemma}
+\noindent Questo lemma ci permette di scegliere sempre un grafo 2-connesso come grafo di partenza senza perdere generalità.
+
+\begin{lemma}
+    Un grafo è planare se e solo se tutte le sue componenti conesse sono planari.
+    \begin{proof}
+        caso banale dimostrato nel lemma precedente (\(\ref{lemBlocchi}\)).
+    \end{proof}
+\end{lemma}
+
+\begin{teorema}\label{minoreTK5}
+    Se \(G\) ha un minore \(K_{3,3}\) allora contiene un sottografo \(TK_{3,3}\). \\
+    Se \(G\) ha un minore \(K_5\) allora contiene un sottografo \(TK_{3,3}\) o \(TK_5\).
+    \begin{proof}
+        Supponiamo che \(G\) abbia un minore \(TK_{3,3}\) o \(TK_5\), se nel ottenere il minore non è stata coinvolta nessuna operazione di contrazione degli archi allora esso sarà anche un sottografo di \(G\). Altrimenti sia \(G_0,\dots, G_k\) sequenza di grafi ottenuta da \(G\), \(G_0\) sottografo di \(G\), l'arco \(e_i\) di \(G_{i-1}\) è contratto per ottenere \(G_i\) e \(G_k\) è \(K_{3,3}\) o \(K_5\).
+    \end{proof}
+\end{teorema}
+
 \begin{teorema}[Teorema di Kuratowski]
     Un grafo \(G\) è planare se e solo se non contiene sottografi \(TK_{3,3}\) o \(TK_5\).
     \begin{proof}
-        \underline{“\(\Rightarrow\)”}: è evidente che se un grafo \(G\) è planare non contiene sottografi omeomorfi a \(K_{3,3}\) o \(K_5\). \smallskip \\
-        \underline{“\(\Leftarrow\)”}: per provare questo lato dell'implicazione dimostramo la tesi equivalente “\(G\) non planare \(\Rightarrow\) contiene \(TK_{3,3}\) o \(TK_5\)”
+        \underline{“\(\Rightarrow\)”}: dato il lemma \(\ref{k5k33nonplanari}\), è evidente che se un grafo \(G\) è planare non contiene sottografi omeomorfi a \(K_{3,3}\) o \(K_5\). \smallskip \\
+        \underline{“\(\Leftarrow\)”}: per provare questo lato dell'implicazione dimostramo la tesi equivalente “\(G\) non planare \(\Rightarrow\) contiene \(TK_{3,3}\) o \(TK_5\)”.\\
+        Consideriamo \(G\) grafo semplice, 2-connesso con \(\epsilon\) archi e procediamo per induzione su \(\epsilon\). Notiamo che se \(\epsilon \leq 6\), per il lemma \(\ref{criterioNonPlan}\) \(G\) è planare e la tesi è vera. Supponiamo quindi il teorema vero per i grafi aventi \(\epsilon-1\) archi.\\
+        Consideriamo ora \(G\) non planare, \((a,b) \in E(G)\) un arco qualsiasi, \(G'=G-(a,b)\). \\
+        Se \(G'\) non planare allora per ipotesi induttiva contiene \(TK_{3,3}\) o \(TK_5\), i quali saranno quindi di conseguenza contenuti anche in \(G\). \\
+        Se invece \(G'\) planare, denotando con \(\kappa(a,b)\) il numero di cammini internamente disgiunti da \(a\) a \(b\) in \(G'\), siccome \(G\) è 2-connesso sappiamo \(\kappa(a,b)\geq 1\).
+        \begin{enumerate}
+            \item \textit{caso \(\kappa(a,b)=1\)}: questo implica che \(G'\) ha un cut vertex \(u\) in ogni cammino da \(a\) a \(b\). Aggiungiamo gli archi \((a,u)\) e \(b,u\) a \(G'\) se non sono già presenti e otteniamo un grafo \(H\). Denotiamo \(Ha,\; Hb\) i blocchi di \(H\) contenenti \(a\) e \(b\).
+            \\ Dimostriamo ora che \(Ha\) o \(Hb\) è non planare, se entrambi fossero planari infatti potremmo disegnare le loro immersioni nel piano lasciando gli archi \((a,u)\), \((b,u)\) nella faccia esterna, “incollarli” tra loro al vertice \(u\) rimuovere  \((a,u)\), \((b,u)\) e ottenere così un immersione planare di \(G\). Questo è un assurdo essendo \(G\) non planare.\\
+            Supponiamo quindi \(Ha\) non planare, per ipotesi induttiva contiene come sottografo \(TK_{3,3}\) o \(TK_5\). Tale sottografo essendo \(G'\) planare conterrà l'arco \((a,u)\), rimpiazziando quindi \((a,u)\) con il cammino formato dall'arco \((a,b)\) e dal cammino \(b \to u\) in \(Hb\), il risultato sarà un sottografo \(TK_{3,3}\) o \(TK_5\) in \(G\).
+            \item \textit{caso \(\kappa(a,b)=2\)}: siano \(P1\), \(P2\) due cammini internamente disgiunti da \(a\) a \(b\) in \(G'\). Siccome \(\kappa(a,b)=2\) \(\exists v \in P1, u \in P2\) t.c.\@ tutti i cammini da \(a \to b\) contengono uno tra
+            \(\{ u,v \} \) e \(G'-\{ u,v \} \) è disconnesso. Siano ora \(Ka\), \(Kb\) le due componenti connesse di \(G'-\{ u,v\} \) 
+            contenenti rispettivamente \(a\) e \(b\). Denotiamo inoltre \(G_a' \doteq Ka \cup \{ u,v \},\; G_b' \doteq Kb \cup \{ u,v\} \).
+            \\ Aggiungiamo ora un vertice \(x\) a \(G_a'\) adiacente a \(u,v,a\) e similmente un vertice \(y\) a \(G_b'\) adiacente a \(u,v,b\), denotiamo questi grafi \(Ha,\; Hb\). 
+            \\ Proviamo ora per assurdo almeno uno tra \(Ha\) e \(Hb\) è non planare. Siccome il vertice \(x\) ha grado 3 in \(Ha\), ci sono 3 facce incidenti su esso. Disegnamo un immersione planare di \(Ha\) facendo in modo che le facce contenenti gli archi \((u,x), (v,x)\) siano le facce esterne. Similmente disegnamo \(Hb\) in modo che \((u,y),(v,y)\) siano nella faccia esterna. Ora “incolliamo” \(Ha\) e \(Hb\) nei vertici \(u\) e \(v\), cancelliamo \(x\) e \(y\) e aggiungendo l'arco \((a,b)\)
+            otterremmo una immersione planare di \(G\) \(\rightarrow \text{\Lightning}\). Concludiamo quindi che uno tra \(Ha\) e \(Hb\) è non planare.\\
+            Supponendo \(Ha\) non planare allora per ipotesi induttiva contiene un sottografo \(TK_{3,3}\) o \(TK_5\). Se tale sottografo non contiene \(x\) allora è contenuto anche in \(G\) e la dimostrazione è conclusa. Supponiamo quindi che il sottografo contenga \(x\), in questo caso \(Hb\) sarà 2-connesso, in quanto \(G\) lo è. \(Hb\) conterrebbe quindi due cammini internamente disgiunti \(b \to u,\; b\to v\). 
+            Questi due cammini assieme all'arco \((a,b)\) possono essere utilizzati per rimpiazzare gli archi \((u,x),(v,x),(a,x)\) di \(Ha\) ottenendo così un sottografo \(TK_{3,3}\) o \(TK_5\) in \(G\).
+            \item \textit{caso \(\kappa(a,b)\geq 3\)}: siano \(P1\), \(P2\), \(P3\) due cammini internamente disgiunti da \(a\) a \(b\) in \(G'\). Consideriamo una immersione nel piano di \(G'\), ogni coppia di cammini \(P1 \cup P2, P1 \cup P3, \P2 \cup P3\) crea un ciclo la cui immersione nel piano sarà una curva di Jordan. Uno dei tre cammini sarà quindi contenuto nella curva di Jordan formata dagli altri, supponiamo \(P2\) contenuto all'interno di \(P1 \cup P3\).
+            L'arco \((a,b)\) può essere immerso all'interno di \(P1 \cup P2\), all'interno di \(P2 \cup P3\) o all'esterno di \(P1 \cup P3\). Siccome \(G\) è non planare ognuna di queste tre regioni \(Pi\) deve contenere un cammino da un vertice interno a \(Pi\) a uno interno a \(Pj\). Sia \(P12\) un cammino da \(u_1 \in P1\) a \(u_2 \in P2\), \(P13\) da \(v_1 \in P1\) a \(u_3 \in P3\), \(P13\) da \(u_2 \in P2\) a \(v_3 \in P3\).\\
+            \(\forall i\) se \(u_i \neq v_i\) contraiamo l'arco tra essi, aggiungendo ora l'arco \((a,b)\) il grafo risultante sarà un minore \(TK_5\) di \(G\). Quindi per il teorema \(\ref{minoreTK5}\) \(G\) conterrà un sottografo \(TK_5\) o \(TK_{3,3}\).
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.6]{img/minoreTK5.PNG}
+                \caption{minore \(TK_5\) di \(G\)}
+            \end{figure}
+        \end{enumerate}
     \end{proof}
 \end{teorema}
 \noindent Si può riformulare il teorema precedente in termine di minori.
