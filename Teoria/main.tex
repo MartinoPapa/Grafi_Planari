@@ -7,7 +7,14 @@
 \pgfplotsset{compat=newest}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{geometry}
+\usepackage[
+  paperheight=29.7cm,
+  paperwidth=21cm,
+  outer=1.5cm,
+  inner=2.5cm,
+  top=2cm,
+  bottom=2cm
+]{geometry}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage[hidelinks]{hyperref}
@@ -26,23 +33,16 @@
 
 \graphicspath{ {img/} }
 
-\title{
-{Approccio matematico alla planarità dei grafi}\\
-{\large Università degli studi di Trento} \bigskip \\
-{\includegraphics[width=50mm]{logo_bn.png}}
-}
-\author{Martino Papa}
-\date{Day Month Year}
-
 \begin{document}
-\maketitle
+
+\include{parti/titolo}
+
 \tableofcontents
 
 Al momento il documento potrebbe contenere anche definizioni o teoremi “di troppo”. Ho scritto tutto ciò che mi sembrava utile al fine di apprendere fino in fondo l'argomento.
 
 \include{teoria.tex}
 
-% migiorare \ref{}
 
 % LIBRO: graph algorithm and optimization
 

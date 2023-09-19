@@ -1,0 +1,12 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{Sommario}{2}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Introduzione}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Risultati teorici}{4}{chapter.2}%
+\contentsline {chapter}{Bibliografia}{8}{teorema.2.4}%
+\contentsline {chapter}{\numberline {A}Titolo primo allegato}{10}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Titolo}{10}{section.Alph1.1}%
+\contentsline {subsection}{\numberline {A.1.1}Sottotitolo}{10}{subsection.Alph1.1.1}%
+\contentsline {chapter}{\numberline {B}Titolo secondo allegato}{11}{appendix.Alph2}%
+\contentsline {section}{\numberline {B.1}Titolo}{11}{section.Alph2.1}%
+\contentsline {subsection}{\numberline {B.1.1}Sottotitolo}{11}{subsection.Alph2.1.1}%

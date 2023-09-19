@@ -1,0 +1,101 @@
+\documentclass[epsfig,a4paper,11pt,titlepage,twoside,openany]{book}
+\usepackage{epsfig}
+\usepackage{plain}
+\usepackage{setspace}
+\usepackage[paperheight=29.7cm,paperwidth=21cm,outer=1.5cm,inner=2.5cm,top=2cm,bottom=2cm]{geometry} % per definizione layout
+\usepackage[explicit]{titlesec}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{marvosym}
+
+\singlespacing{}
+
+%definizioni e teoremi
+\theoremstyle{definition}
+\newtheorem{definizione}{Definizione}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposizione}{Proposizione}[chapter]
+\newtheorem{corollario}{Corollario}[chapter]
+
+\usepackage[italian]{babel}
+
+\begin{document}
+\pagenumbering{gobble}
+\input{parti/pagina_iniziale.tex}
+
+\clearpage
+
+\input{parti/ringraziamenti.tex}
+\clearpage{}
+\pagestyle{plain}
+\mainmatter{}
+
+\tableofcontents
+\clearpage
+
+
+\begingroup
+% \renewcommand{\cleardoublepage}{} 
+% \renewcommand{\clearpage}{} 
+
+% \titlespacing*{\chapter}{0pt}{0.59in}{0.02in}
+% \titlespacing*{\section}{0pt}{0.20in}{0.02in}
+% \titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
+
+\input{parti/sommario.tex}
+\input{capitoli/introduzione.tex}
+\input{capitoli/RisultatiTeorici.tex}
+
+
+\endgroup
+
+
+% bibliografia in formato bibtex
+%
+% aggiunta del capitolo nell'indice
+\addcontentsline{toc}{chapter}{Bibliografia}
+% stile con ordinamento alfabetico in funzione degli autori
+\bibliographystyle{plain}
+\nocite{*}\bibliography{biblio}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Nota
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Nella bibliografia devono essere riportati tutte le fonti consultate 
+%% per lo svolgimento della tesi. La bibliografia deve essere redatta 
+%% in ordine alfabetico sul cognome del primo autore. 
+%% 
+%% La forma della citazione bibliografica va inserita secondo la fonte utilizzata:
+%% 
+%% LIBRI
+%% Cognome e iniziale del nome autore/autori, la data di edizione, titolo, casa editrice, eventuale numero dell’edizione. 
+%% 
+%% ARTICOLI DI RIVISTA
+%% Cognome e iniziale del nome autore/autori, titolo articolo, titolo rivista, volume, numero, numero di pagine.
+%% 
+%% ARTICOLI DI CONFERENZA
+%% Cognome e iniziale del nome autore/autori (anno), titolo articolo, titolo conferenza, luogo della conferenza (città e paese), date della conferenza, numero di pagine. 
+%% 
+%% SITOGRAFIA
+%% La sitografia contiene un elenco di indirizzi Web consultati e disposti in ordine alfabetico. 
+%% E’ necessario:
+%%   Copiare la URL (l’indirizzo web) specifica della pagina consultata
+%%   Se disponibile, indicare il cognome e nome dell’autore, il titolo ed eventuale sottotitolo del testo
+%%   Se disponibile, inserire la data di ultima consultazione della risorsa (gg/mm/aaaa).    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\titleformat{\chapter}
+{\normalfont\Huge\bfseries}{Allegato \thechapter}{1em}{}
+% sezione Allegati - opzionale
+\appendix
+\input{parti/allegati.tex}
+
+\end{document}

@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{dalal}
+Triggs~B. Dalal~N.
+\newblock Histograms of oriented gradients for human detection.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR)}, pages
+  886--893, San Diego, USA, 20-26 June 2005.
+
+\bibitem{coulouris}
+Donald~L Kocay, William.;~Kreher.
+\newblock {\em Graphs, Algorithms, and Optimization Discrete Mathematics and
+  Its Applications}.
+\newblock CRC Press, first edition edition, 2004.
+
+\bibitem{donoho}
+Donoho~D. L.
+\newblock Compressed sensing.
+\newblock {\em IEEE Trans. Inf. Theory}, 52(4):1289--1306, 2006.
+
+\bibitem{ictbusiness}
+Me.
+\newblock Ict business.
+\newblock http://www.ictbusiness.it/.
+\newblock ultimo accesso 15/06/2015.
+
+\end{thebibliography}
