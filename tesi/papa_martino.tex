@@ -6,6 +6,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage[hidelinks]{hyperref}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -18,10 +19,10 @@
 \newtheorem{definizione}{Definizione}[chapter]
 
 \theoremstyle{plain}
-\newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{proposizione}{Proposizione}[chapter]
-\newtheorem{corollario}{Corollario}[chapter]
+\newtheorem{teorema}[definizione]{Teorema}
+\newtheorem{lemma}[definizione]{Lemma}
+\newtheorem{proposizione}[definizione]{Proposizione}
+\newtheorem{corollario}[definizione]{Corollario}
 
 \usepackage[italian]{babel}
 
@@ -49,12 +50,19 @@
 % \titlespacing*{\subsection}{0pt}{0.10in}{0.02in}
 
 \input{parti/sommario.tex}
-\input{capitoli/introduzione.tex}
-\input{capitoli/RisultatiTeorici.tex}
+\input{capitoli/fondamentiTeorici.tex}
+\input{capitoli/boyer.tex}
 
 
 \endgroup
 
+%\titleformat{\chapter}
+%{\normalfont\bfseries}{Allegato \thechapter}{1em}{#1}
+% sezione Allegati - opzionale
+\addto\captionsitalian{\renewcommand{\chaptername}{Allegato}}
+
+\appendix
+\input{parti/allegati.tex}
 
 % bibliografia in formato bibtex
 %
@@ -90,12 +98,4 @@
 %%   Se disponibile, inserire la data di ultima consultazione della risorsa (gg/mm/aaaa).    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\titleformat{\chapter}
-{\normalfont\Huge\bfseries}{Allegato \thechapter}{1em}{}
-% sezione Allegati - opzionale
-\appendix
-\input{parti/allegati.tex}
-
 \end{document}
