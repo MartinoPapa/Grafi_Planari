@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex papa_martino"] 1695632836 "papa_martino.aux" "papa_martino.bbl" "papa_martino" 1695633340 0
-  "./biblio.bib" 1695397452 1413 d1e0c1a9238567207b1f17ee54217b45 ""
+["bibtex papa_martino"] 1696582740 "papa_martino.aux" "papa_martino.bbl" "papa_martino" 1696582745 0
+  "./biblio.bib" 1695810868 1431 bf366331ed52afae84ed1fbe9038497d ""
   "c:/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1671534722 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "papa_martino.aux" 1695633338 3477 493f35b9f8009e0274be9420dbe8968b "pdflatex"
+  "papa_martino.aux" 1696582743 4135 6527863b9c11b587d875a28ca11ed0c4 "pdflatex"
   (generated)
   "papa_martino.bbl"
   "papa_martino.blg"
   (rewritten before read)
-["pdflatex"] 1695633335 "c:/Users/marti/Desktop/uni/Tesi/tesi/papa_martino.tex" "papa_martino.pdf" "papa_martino" 1695633340 0
-  "c:/Users/marti/Desktop/uni/Tesi/tesi/papa_martino.tex" 1695633048 3357 46ee8629f36ca95dca9b09c62997e43c ""
+["pdflatex"] 1696582741 "c:/Users/marti/Desktop/uni/Tesi/tesi/papa_martino.tex" "papa_martino.pdf" "papa_martino" 1696582745 0
+  "c:/Users/marti/Desktop/uni/Tesi/tesi/papa_martino.tex" 1695653286 3436 30941a24bf3d108550d1c1ed41baebfd ""
   "c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1671536561 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1671540619 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1671538950 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -128,17 +128,19 @@
   "c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1671551069 4662777 837fc06352b6a5cd3cf3decdf5e7dab2 ""
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1671551334 7874744 56947912965ca17ee5dd31540707f3ae ""
   "c:/texlive/2022/texmf.cnf" 1671551034 713 baa45e065482d44c4cd81b98ef72c63b ""
-  "capitoli/boyer.tex" 1695633014 30 0e2486b3a668966f1d2191a226b7cdaa ""
-  "capitoli/fondamentiTeorici.tex" 1695633334 20746 ac77a9f63ee986ddfaa9a529427eec89 ""
+  "capitoli/boyer.tex" 1695818309 238 f03671c9556fdee72da79b79f02807a9 ""
+  "capitoli/fondamentiTeorici.tex" 1696582735 20695 c1afd5b61b784c7a9cb939834716f15e ""
+  "capitoli/introduzione.tex" 1696582332 3995 7d12d9008dc925912077cef34c92890f ""
+  "img/3case.png" 1695654304 28402 db77f2ee4a6818e288feef655912a48c ""
   "img/k533.png" 1694769648 7611 c118c83f9f90de0941739484239d18c3 ""
   "img/minoreTK5.PNG" 1695048736 53235 cc7e87aadbb452218408359fc1e4fcc5 ""
   "img/suddivisione.PNG" 1694699708 12496 2358684e131e6b5730aabe1f2d4a52b6 ""
   "marchio_unitrento_colore_it_202002.eps" 1581498201 222744 5d72016d4da94ab2e0e9c383b78b1960 ""
-  "papa_martino.aux" 1695633338 3477 493f35b9f8009e0274be9420dbe8968b "pdflatex"
-  "papa_martino.bbl" 1695632837 758 6305a6f330a042e88c0a72ebfa23b630 "bibtex papa_martino"
-  "papa_martino.out" 1695633338 1153 517e61f060c8eefee39bc77b411a9181 "pdflatex"
-  "papa_martino.toc" 1695633338 656 dbf2f8aade596615e9394f697e70989c "pdflatex"
-  "parti/allegati.tex" 1695633195 9363 581d4a05e735779b498e55acebef4631 ""
+  "papa_martino.aux" 1696582743 4135 6527863b9c11b587d875a28ca11ed0c4 "pdflatex"
+  "papa_martino.bbl" 1696582741 775 d743e808dcc33e213a206f448d0d9dfa "bibtex papa_martino"
+  "papa_martino.out" 1696582743 1682 ae65479e90397646e30719b1a5dc6032 "pdflatex"
+  "papa_martino.toc" 1696582743 905 1e748143086a87b848c0184a7f931a14 "pdflatex"
+  "parti/allegati.tex" 1696582290 9332 748b7e61f47aca79353d7a2b49b5ddd9 ""
   "parti/pagina_iniziale.tex" 1695137382 778 ba5ff8ce70987b62cf5a6415bdf46d51 ""
   "parti/ringraziamenti.tex" 1695137382 114 21a1bcb80fd461f16beb34bdd382d882 ""
   "parti/sommario.tex" 1695136936 1367 53a8f5b94fc0435537b0b61aac335d9f ""

@@ -1,28 +1,16 @@
 \chapter{Fondamenti teorici}
-
-Nel 1736 Leonhard Euler (1707~-~1783) decise di cimentarsi nel risolvere il problema dei sette ponti di Königsberg, nella sua pubblicazione “\textit{Solutio problematis ad geometriam situs pertinentis}\cite{ponti}” Eulero dimostò la non esistenza della soluzione di tale problema. Per farlo inventò quella che ad oggi chiamiamo teoria dei grafi.
-\begin{definizione}[Grafo]
-    Un grafo è una coppia \(G=(V,E)\) dove:
-    \begin{itemize}
-        \item \(V\) è un insieme di vertici (\textbf{vertex});
-        \item \(E\) è un insieme di coppie di nodi \((u,v),\;u,v\in V\) dette archi o lati (\textbf{edge}); se un grafo è orientato avremmo che le coppie \(<u,v>\in E\) saranno ordinate.
-    \end{itemize}
+In questo capitolo getteremo le basi teoriche impiegate nell'algoritmo di Boyer-Myrvold. Cominceremo elencando alcuni criteri in grado di escludere a priori la planarità di determinati grafi, per poi procedere con la dimostrazione del teorema di Kuratowski (\(\ref{Kuratowski}\)).
+\section{La formula di Eulero}
+La formula di Eulero è uno dei risultati più conosciuti nella teoria dei grafi. Essa afferma che la caratteristica di Eulero dei grafi planari connessi è sempre pari a due.
+\begin{definizione}[Caratteristica di eulero]\label{caratteristica-eulero}
+    Sia \(\tau \subset \mathbb{R}^n\) un complesso cellulare composto da \(k_i\) i-celle \(i=0,\dots,n\). Definiamo caratteristica di eulero
+    \begin{equation}
+        \chi(\tau) = k_0 - k_1 + k_2 - \dots k_n = \sum_{i=0}^{n}{(-1)}^i k_i
+    \end{equation}
 \end{definizione}
-\noindent In questo documento assumeremo sempre \(G\) non orientato. 
-\begin{definizione}[Grafo planare]\label{grafo-planare}
-    Un grafo \(G\) si dice planare se può essere rappresentato nel piano evitando che gli archi si intersechino (se non negli endpoint).
+\begin{definizione}[Facce]
+    Le facce di un immersione planare \(G^\psi\) sono le regioni connesse che rimangono quando il piano viene “tagliato” dagli archi di \(G^\psi\).
 \end{definizione}
-Uno dei quesiti più interessanti riguardante la teoria dei grafi è riuscire stabilire se un determinato grafo \(G\) sia planare o meno. Nonostante la definizione di questo problema sia molto semplice, la soluzione non è affato banale. Lo studio di algoritmi efficienti per il “\textit{planarity testing}”  è stato infatti affrontato da molteplici matematici nel corso del 1900 e dei primi anni 2000.\\
-Il primo algoritmo in grado di risolvere tale problema in tempo lineare fu “\textit{l'algoritmo di Hopcroft e Tarjan}\cite{Hopcroft}” pubblicato nel 1974. Esso si limitava però a fornire in output un valore booleano senza “disegnare” una reale immersione planare di \(G\).
-\begin{definizione}[Immersione planare]
-    Dato un grafo \(G\), definiamo \(\psi : (V,E) \to \mathbb{R}^2\) la funzione che mappa i vertici di \(G\) nel piano e gli archi di \(G\) in curve continue che si intersecano solamente negli endpoint. Allora \(G^\psi \doteq \psi(G)\) è chiamata immersione planare di \(G\).
-\end{definizione}
-Solamente 30 anni dopo, grazie alla pubblicazione John M. Boyer “\textit{Simplified \(O(n)\) Planarity by Edge Addition}\cite{main_article}”, è stato scoperto il primo algoritmo lineare in grado di resituire, se \(G\) planare, una sua immersione mentre, se \(G\) non planare, un sottografo di Kuratowski contenuto in esso. Dimostreremo infatti nel teorema \(\ref{Kuratowski}\) che un grafo \(G\) è non planare se e solo se contiene un sottografo di Kuratowski.
-\begin{definizione}[Grafo di Kuratowski]\label{kuratowskisottografo}
-    Definiamo \(K_{3,3}\) e \(K_5\) grafi di Kuratowski.
-\end{definizione}
-\section{Formulazione di ipotesi non restrittive}
-Abbiamo stabilito che determinare la planarità di un grafo non sia un quesito facile. Tuttavia ci sono alcuni risultati matematici in grado di fornire risposte immediate per alcuni casi paritcolari. Questo ci permetterà di escludere a priori la possibilità che tali grafi siano planari.
 \begin{teorema}\label{eulero-generica}
     Sia \(G\) un grafo planare avente \(k\) componenti connesse. Sia \(G^\varphi\) una immersione di \(G\) nel piano, allora
     \begin{equation}
@@ -59,7 +47,11 @@ Abbiamo stabilito che determinare la planarità di un grafo non sia un quesito f
         Direttamente dal teorema \(\ref{eulero-generica}\) con \(k=1\).
     \end{proof}
 \end{corollario}
-Notiamo che questi due risultati non forniscono immediate risposte riguardo alla planarità di un determinato grafo \(G\). Per conoscerne il numero di facce è infatti necessario ottenere una immersione planare di esso. Tuttavia il corollario \(\ref{formulaeulero}\) sarà fondamentale in alcune dimostrazioni che vedremo successivamente.
+Notiamo che questi due risultati non forniscono immediate risposte riguardo alla planarità di un determinato grafo \(G\). Per conoscerne il numero di facce è infatti necessario conoscere una immersione planare di esso. Tuttavia il corollario \(\ref{formulaeulero}\) sarà fondamentale in alcune dimostrazioni che vedremo successivamente.
+
+\section{Formulazione di ipotesi non restrittive}
+Abbiamo stabilito che determinare la planarità di un grafo non sia un quesito facile. Tuttavia ci sono alcuni risultati matematici in grado di fornire risposte immediate per alcuni casi paritcolari.
+
 \begin{lemma}\label{gradifacce}
     Sia \(G\) un grafo planare, \(G^\psi\) una sua immersione nel piano, \(F_1, \dots, F_f\) le facce di \(G^\psi\) allora
     \begin{equation}
@@ -93,14 +85,28 @@ Combinando i risultati del lemma \(\ref{gradifacce}\) e del corollario \(\ref{fo
     \end{proof}
 \end{proposizione}
 Vediamo ora un altra serie di risultati che ci permetteranno di formulare ulteriori ipotesi non restrittive sul grafo analizzato.
+\begin{definizione}[Suddivisione]
+    Dato un grafo \(G\) definiamo suddivisione (subdivision) di \(G\) i grafi ottenuti da \(G\) rimpiazzando uno o più archi con cammini di lunghezza 2 o più. In altre parole una suddivisione di \(G\) è un grafo ottenuto da esso inserendo dei vertici “all'interno dei lati”.
+\end{definizione}
+\begin{definizione}[Contrazione]
+    Operazione inversa della suddivisione, consiste nell'contrarre un arco avente un endpoint di grado 2.
+\end{definizione}
 \begin{proposizione}
     Ogni suddivisione di un grafo non planare è non planare, questo implica anche che i vertici di grado 2 non influenzano la planarità del grafo.
     \begin{proof}
         Sia \(G\) grafo non planare, \(a,b\) due archi che si intersecano nell'immersione \(G^\psi\), è evidente che suddividere \(a\) o \(b\) non andrebbe ad influire sulla non planarità del grafo.
     \end{proof}
 \end{proposizione}
+Prima di proseguire, per comprendere la proposizione \(\ref{Blocchi}\) necessitiamo di introdurre alcuni concetti teorici.
+\begin{definizione}[Grafo k-connesso]
+    Sia \(G=(V,E)\) un grafo non orientato. Diremo \(G\) \textbf{k-connesso} se \(|V|>k\) e \(\kappa \geq k\) dove \(\kappa\) corrisponde alla vertex-connectivity.\\
+    Informalmente un grafo è detto k-connesso se rimane connesso rimuovendo \(k'<k\) vertici qualsiasi.
+\end{definizione}
+\begin{definizione}[Blocco]
+    Definiamo blocchi di un grafo i sottografi 2-connessi massimali.
+\end{definizione}
 \begin{proposizione}\label{Blocchi}
-    Un grafo separabile è planare se e solo se tutti i suoi blocchi sono planari.
+    Un grafo è planare se e solo se tutti i suoi blocchi sono planari.
     \begin{proof}
         \underline{“\(\Rightarrow\)”}: banale, è evidente che se un grafo è planare allora anche i suoi sottografi lo sono.\\
         \underline{“\(\Leftarrow\)”}: notiamo che due blocchi differenti hanno al più un elemento nell'intersezione, se così non fosse i due blocchi sarebbero 2-connessi confutando l'ipotesi di massimalità. Proseguiamo ora per induzione sul numero di blocchi \(|B|\), dove \(B={\{b_i\}}_{i \in I}\) è l'insieme dei blocchi.
@@ -122,6 +128,9 @@ Grazie alla proposizione \(\ref{Blocchi}\) possiamo sempre supporre \(G\) 2-conn
 \section{Il teorema di Kuratowski}
 Come accennato in precedenza gli algoritmi di planarity testing moderni non si limitano a fornire una risposta booleana per la planarità, bensì, in caso di risposta negativa, essi restituiscono in output un sottografo di Kuratowski (\(\ref{kuratowskisottografo}\)). Il nome di tali sottografi è dovuto al matematico polacco Kazimierz Kuratowski, fu lui infatti a dimostrare che la presenza di un tale sottografo è equivalente alla non planarità.
 \\ Vediamo ora i risultati teorici che permettono di raggiungere tale conclusione.
+\begin{definizione}[Grafo di Kuratowski]\label{kuratowskisottografo}
+    Definiamo \(K_{3,3}\) e \(K_5\) grafi di Kuratowski.
+\end{definizione}
 \begin{lemma}\label{k5k33nonplanari}
     \(K_5\) e \(K_{3,3}\) sono grafi non planari.
     \begin{proof}
@@ -141,12 +150,16 @@ Come accennato in precedenza gli algoritmi di planarity testing moderni non si l
         \caption{\(K_5\) e \(K_{3,3}\)}
     \end{figure} 
 \end{lemma}
+Grazie al lemma \(\ref{k5k33nonplanari}\) abbiamo dimostrato la non esistenza della soluzione al problema delle 3 case (\(\ref{problemaCase}\)). Ppossiamo infatti notare che esso ci chiedeva di disegnare un immersione planare di \(K_{3,3}\).
 \begin{lemma}\label{12.3}
     Sia \(G\) un grafo qualsiasi ottenuto splittando un vertice di \(K_5\) allora \(G\) contiene un sottografo \(TK_{3,3}\).
     \begin{proof}
         Siano \(u_1, u_2\) i due vertici risultanti dallo split di un vertice di \(K_5\). Per definizione di split ambedue i vertici hanno almeno grado 3. \(u_1\) e \(u_2\) sono adiacenti e assieme sono adiacenti a tutti i rimanenti 4 vertici. Scegliendo ora una partizione dei 4 vertici \(x,y,w,z\) t.c. \(u_1\) adiacente a \(x,y\) e \(u_2\) adiacente a \(w,z\), otteniamo un sottografo \(K_{3,3}\) con bipartizione \((u_1, w, z)\) e \((u_2,x,y)\).
     \end{proof}
 \end{lemma}
+\begin{definizione}[Minore]
+    \(H\) è detto minore di \(G\) se \(H\) è un grafo ottenuto da \(G\) tramite una sequenza di operazioni di rimozione di archi, vertici o contrazione di archi.
+\end{definizione}
 \begin{teorema}\label{minoreTK5}
     Se \(G\) ha un minore \(K_{3,3}\) allora contiene un sottografo \(TK_{3,3}\). Se \(G\) ha un minore \(K_5\) allora contiene un sottografo \(TK_{3,3}\) o \(TK_5\).
     \begin{proof}

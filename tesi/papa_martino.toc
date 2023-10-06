@@ -1,10 +1,13 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{Sommario}{2}{chapter*.2}%
-\contentsline {chapter}{\numberline {1}Fondamenti teorici}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Formulazione di ipotesi non restrittive}{3}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Il teorema di Kuratowski}{5}{section.1.2}%
-\contentsline {chapter}{\numberline {2}L'algoritmo di Boyer}{9}{chapter.2}%
-\contentsline {chapter}{\numberline {A}Teoria dei grafi}{10}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Topologia}{13}{appendix.Alph2}%
-\contentsline {chapter}{Bibliografia}{13}{definizione.Alph2.9}%
+\contentsline {chapter}{\numberline {1}Introduzione}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Fondamenti teorici}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}La formula di Eulero}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Formulazione di ipotesi non restrittive}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Il teorema di Kuratowski}{7}{section.2.3}%
+\contentsline {chapter}{\numberline {3}L'algoritmo di Boyer-Myrvold}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Supposizioni sul grafo in input}{11}{section.3.1}%
+\contentsline {chapter}{\numberline {A}Teoria dei grafi}{12}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Topologia}{15}{appendix.Alph2}%
+\contentsline {chapter}{Bibliografia}{15}{definizione.Alph2.9}%
