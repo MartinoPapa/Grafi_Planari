@@ -1,5 +1,5 @@
 \chapter{Fondamenti teorici}
-In questo capitolo getteremo le basi teoriche impiegate nell'algoritmo di Boyer-Myrvold. Cominceremo elencando alcuni criteri in grado di escludere a priori la planarità di determinati grafi, per poi procedere con la dimostrazione del teorema di Kuratowski (\(\ref{Kuratowski}\)).
+In questo capitolo getteremo le basi teoriche impiegate nell'algoritmo di Boyer-Myrvold. Cominceremo dimostrando la formula di eulero, successivamente vedremo alcuni criteri in grado di escludere a priori la planarità di determinati grafi ed infine dimostreremo il teorema di Kuratowski (\(\ref{Kuratowski}\)).
 \section{La formula di Eulero}
 La formula di Eulero è uno dei risultati più conosciuti nella teoria dei grafi. Essa afferma che la caratteristica di Eulero dei grafi planari connessi è sempre pari a due.
 \begin{definizione}[Caratteristica di eulero]\label{caratteristica-eulero}
@@ -150,7 +150,7 @@ Come accennato in precedenza gli algoritmi di planarity testing moderni non si l
         \caption{\(K_5\) e \(K_{3,3}\)}
     \end{figure} 
 \end{lemma}
-Grazie al lemma \(\ref{k5k33nonplanari}\) abbiamo dimostrato la non esistenza della soluzione al problema delle 3 case (\(\ref{problemaCase}\)). Ppossiamo infatti notare che esso ci chiedeva di disegnare un immersione planare di \(K_{3,3}\).
+Grazie al lemma \(\ref{k5k33nonplanari}\) abbiamo dimostrato la non esistenza della soluzione al problema delle 3 case (\(\ref{problemaCase}\)). Possiamo infatti notare che esso richiede di disegnare un immersione planare di \(K_{3,3}\).
 \begin{lemma}\label{12.3}
     Sia \(G\) un grafo qualsiasi ottenuto splittando un vertice di \(K_5\) allora \(G\) contiene un sottografo \(TK_{3,3}\).
     \begin{proof}
